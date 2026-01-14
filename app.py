@@ -109,4 +109,7 @@ if __name__ == '__main__':
     print("\n" + "="*50)
     print("HOUSE PRICE PREDICTION SERVER")
     print("="*50)
-    app.run(debug=True, port=5000)
+    # Use PORT environment variable for Render, default to 5000 for local
+    port = int(os.environ.get('PORT', 5000))
+    # host='0.0.0.0' is required for Render to be accessible externally
+    app.run(host='0.0.0.0', port=port)
