@@ -50,7 +50,7 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
     };
 
     try {
-        const response = await fetch('https://ai-house-price-predictor-9i6h.onrender.com', {
+        const response = await fetch('https://ai-house-price-predictor-9i6h.onrender.com/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
