@@ -43,6 +43,17 @@ def load_artifacts():
 # Load on startup
 artifacts_loaded = load_artifacts()
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        "status": "House Price Prediction API is running",
+        "endpoints": {
+            "/predict": "POST - Get price prediction",
+            "/locations": "GET - List supported locations",
+            "/health": "GET - Server health check"
+        }
+    })
+
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({
